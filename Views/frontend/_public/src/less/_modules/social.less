@@ -1,0 +1,120 @@
+// Social Media Buttons
+
+.social-wrapper{
+  margin:  0 auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-wrapper{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.sm {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  position: relative;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  margin: .5rem;
+  line-height: 5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  color: @gray-light;
+  overflow: hidden;
+
+  &.is-round{
+    border-radius: 50%;
+  }
+
+  i{
+    &.fa-circle{
+      color:@base_color;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &.facebook{
+    &:hover{
+      i{
+        &.fa-circle{
+          color:@fb_color;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &.gplus{
+    &:hover{
+      i{
+        &.fa-circle{
+          color:@gp_color;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &.twitter{
+    &:hover{
+      i{
+        &.fa-circle{
+          color:@tw_color;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &.youtube{
+    &:hover{
+      i{
+        &.fa-circle{
+          color:@yt_color;
+          transition: all .3s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: @phoneLandscapeViewportWidth) {
+  .sm {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    margin: .5rem;
+    line-height: 3.5rem !important;
+    font-size: 1.75rem !important;
+  }
+  .icon-wrapper{
+    margin-top: 18%;
+  }
+}
+
+@media screen and (max-width: @tabletViewportWidth) {
+.sm {
+  width: 7rem;
+  height: 7rem;
+  margin: .5rem;
+  line-height: 7rem;
+  font-size: 3.5rem;
+}
+}
+
+@media screen and (max-width: @desktopViewportWidth) {
+.sm {
+  width: 7rem;
+  height: 7rem;
+  margin: .5rem;
+  line-height: 7rem;
+  font-size: 3.5rem;
+}
+}
