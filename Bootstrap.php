@@ -52,11 +52,6 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         'addLessFiles'
         );
 
-        // $this->subscribeEvent(
-        //     'Enlight_Controller_Action_PostDispatchSecure_Widgets_Campaign',
-        //     'onEmotionAddElement'
-        // );
-
         $this->subscribeEvent(
            'Shopware_Controllers_Widgets_Emotion_AddElement',
            'onEmotionAddElement'
@@ -237,7 +232,20 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         $component->createCheckboxField(
             array(
                 'name' => 'additional_styles',
-                'fieldLabel' => 'Zusätzliche Styles hinzufügen?',
+                'fieldLabel' => 'Border Box',
+                'supportText' => 'Zusätzliche Styles hinzufügen?',
+                'helpTitle' => 'Border Box',
+                'helpText' => 'Hier können sie dem widget einen optischen Rand verpassen um es optisch an das SW5 Responsive Theme anzupassen',
+                'defaultValue' => true
+            )   
+        );
+        $component->createCheckboxField(
+            array(
+                'name' => 'icons_round',
+                'fieldLabel' => 'Runde Icons',
+                'supportText' => 'Icons rund oder Eckig?',
+                'helpTitle' => 'Runde Icons',
+                'helpText' => 'Hier legen sie die Form der Socialmedia Icons fest: Rund oder Eckig',
                 'defaultValue' => true
             )   
         );
@@ -245,7 +253,8 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         $component->createCheckboxField(
             array(
                 'name' => 'facebook_active',
-                'fieldLabel' => 'Facebook Button anzeigen',
+                'fieldLabel' => 'Facebook',
+                'supportText' => 'Facebook Button anzeigen',
                 'defaultValue' => false
             )
         );
@@ -254,7 +263,8 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         $component->createCheckboxField(
             array(
                 'name' => 'google_active',
-                'fieldLabel' => 'GooglePlus Button anzeigen',
+                'fieldLabel' => 'GooglePlus',
+                'supportText' => 'GooglePlus Button anzeigen',
                 'defaultValue' => false
             )
         );
@@ -263,7 +273,8 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         $component->createCheckboxField(
             array(
                 'name' => 'twitter_active',
-                'fieldLabel' => 'Twitter Button anzeigen',
+                'fieldLabel' => 'Twitter',
+                'supportText' => 'Twitter Button anzeigen',
                 'defaultValue' => false
             )
         );
@@ -272,7 +283,8 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         $component->createCheckboxField(
             array(
                 'name' => 'youtube_active',
-                'fieldLabel' => 'Youtube Button anzeigen',
+                'fieldLabel' => 'YouTube',
+                'supportText' => 'YouTube Button anzeigen',
                 'defaultValue' => false
             )
         );

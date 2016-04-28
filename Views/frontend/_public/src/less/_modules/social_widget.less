@@ -1,6 +1,6 @@
 // Social Media Buttons
 
-.social-wrapper{
+.sm-wrapper{
   margin:  0 auto;
   text-align: center;
   width: 100%;
@@ -29,8 +29,8 @@
   color: @gray-light;
   overflow: hidden;
 
-  &.is-round{
-    border-radius: 50%;
+  &.is--round{
+    border-radius: 2.5rem;
   }
 
   i{
@@ -39,6 +39,8 @@
       transition: all .3s ease-in-out;
     }
   }
+  background:@base_color;
+  transition: all .3s ease-in-out;
 
   &.facebook{
     &:hover{
@@ -48,6 +50,8 @@
           transition: all .3s ease-in-out;
         }
       }
+      background:@fb_color;
+      transition: all .3s ease-in-out;
     }
   }
 
@@ -59,6 +63,8 @@
           transition: all .3s ease-in-out;
         }
       }
+      background:@gp_color;
+      transition: all .3s ease-in-out;
     }
   }
 
@@ -70,6 +76,8 @@
           transition: all .3s ease-in-out;
         }
       }
+      background:@tw_color;
+      transition: all .3s ease-in-out;
     }
   }
 
@@ -81,6 +89,8 @@
           transition: all .3s ease-in-out;
         }
       }
+      background:@yt_color;
+      transition: all .3s ease-in-out;
     }
   }
 }
