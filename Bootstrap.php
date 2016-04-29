@@ -99,7 +99,6 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         $controller = $arguments->getSubject();
         $config = $this->Config();
         $view = $controller->View();
-        $request = $controller->Request();
         $data = $arguments->getReturn();
                
         $view->addTemplateDir($this->Path() . 'Views/');
