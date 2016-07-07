@@ -1,0 +1,49 @@
+.footer-main{
+	hr{
+		border-color: @border-color;
+	}
+	.icon-wrapper{
+		.navigation--list{
+		    margin-top: .75rem;
+		}
+		.btn{
+			box-shadow: none;
+	        border-radius: 1px;
+	        background: transparent;
+	        background-image: none;
+	        border: 1px solid @gray-light;
+	        color: @gray-light;
+	        .unitize(padding,2);
+	        .unitize(margin-right, 5);
+	        .unitize(height, 40);
+	        .unitize(width, 40);
+	        position: relative;
+	        text-align: center;
+	        .transition(all, 0.2s, ease-in-out);
+	        line-height: 1.25rem;
+	        font-size: 1.25rem;
+	        i{
+	        	vertical-align: -webkit-baseline-middle;
+	        }
+	        &:hover {
+	            border: 1px solid @brand-primary;
+	            color: @brand-primary;
+	        }
+		}
+
+		.navigation--list{
+			.navigation--entry{
+				display: inline-block;
+				float: left;
+			}
+		}
+	}
+	@media screen and (min-width: @tabletLandscapeViewportWidth) {
+		.navigation--list {
+		    // Reset the button width
+		    .navigation--entry .btn { 
+		    	.unitize(width, 40); 
+		    }
+		}
+	}
+}

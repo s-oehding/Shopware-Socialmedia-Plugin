@@ -115,18 +115,23 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
     *
     * @param Enlight_Controller_ActionEventArgs $args
     */
-    public function onPostDispatchFrontend(Enlight_Controller_ActionEventArgs $args)
+    public function onPostDispatchFrontend(Enlight_Controller_ActionEventArgs $arguments)
     {
-        $request = $args->getSubject()->Request();
-        $view = $args->getSubject()->View();
+        $request = $arguments->getSubject()->Request();
+        $view = $arguments->getSubject()->View();
         if ($request->isXmlHttpRequest()) {
             return;
         }
         $config = $this->Config();
 
-        if($config->fontawesome_add){
-            $view->addTemplateDir($this->Path() . 'Views/');
-        }
+        $view->addTemplateDir($this->Path() . 'Views/');
+
+        $view->assign('fontawesomeAdd', $config->get('fontawesome_add'));
+        $view->assign('socialFooter', $config->get('social_footer'));
+        $view->assign('fbUrl', $config->get('fb_url'));
+        $view->assign('gpUrl', $config->get('gp_url'));
+        $view->assign('twUrl', $config->get('tw_url'));
+        $view->assign('ytUrl', $config->get('yt_url'));
     }
 
 
@@ -149,7 +154,15 @@ class Shopware_Plugins_Backend_SoSocialmedia_Bootstrap extends Shopware_Componen
         $form->setElement('checkbox', 'fontawesome_add', array(
             'label' => 'Fontawesome Icons über CDN einbinden?',
             'value' => true,
-            'scope' => \Shopware\Models\Config\Element::SCOPE_SHOP
+            'scope' => \Shopware\Models\Config\Element::SCOPE_SHOP,
+            'description' => 'Wenn aktiviert wird die Fontawesome Iconbibliothek welche für die Socialmedia Icons benötigt wird im header eingebunden'
+        ));
+
+        $form->setElement('checkbox', 'social_footer', array(
+            'label' => 'Socialmedia Icons im Footer einbinden?',
+            'value' => true,
+            'scope' => \Shopware\Models\Config\Element::SCOPE_SHOP,
+            'description' => 'Erzeugt einen Socialmedia Block unter dem Newsletter Bereich im Footer. Es werden Icons für alle Socialmedia kanäle erzeugt, für die eine URL hinterlegt ist.'
         ));
 
         $form->setElement('text', 'base_color', array(
